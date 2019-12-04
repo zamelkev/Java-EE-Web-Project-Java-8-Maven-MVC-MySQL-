@@ -1,3 +1,5 @@
+<%@page import="modelo.TipoTelefono"%>
+<%@page import="modelo.Modelo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -6,12 +8,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Adopcion</title>
+<title>Signup</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
-<body id="adop">
+<body id="main-body">
+
 	<header class="main-header">
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark mynav">
 			<div class="container">
@@ -26,14 +30,14 @@
 				<div class="collapse navbar-collapse justify-content-center"
 					id="collapsenavbar">
 					<ul class="navbar-nav ml-auto ">
-						<li class="nav-item "><a href="index.jsp"
+						<li class="nav-item"><a href="index.jsp"
 							class="nav-link text-white"><i class="fas fa-home"></i> Incio</a></li>
-						<li class="nav-item active"><a href="adopcion.jsp"
+						<li class="nav-item"><a href="adopcion.jsp"
 							class="nav-link text-white"><i class="fas fa-dog"></i>
 								Adopcion</a></li>
-						<li class="nav-item"><a href="eventos.jsp" class="nav-link text-white"><i
+						<li class="nav-item active"><a href="eventos.jsp" class="nav-link text-white"><i
 								class="far fa-calendar-alt"></i> Eventos</a></li>
-						<li class="nav-item"><a href="signup.jsp"
+						<li class="nav-item "><a href="signup.jsp"
 							class="nav-link text-white"><i class="fas fa-user"></i>
 								Sign-Up</a></li>
 
@@ -42,69 +46,8 @@
 			</div>
 
 		</nav>
-
 	</header>
-		<div class="container-fluid adopage">
-		<jsp:useBean id="m" class="modelo.Modelo" scope="page"></jsp:useBean>
-		<%
-			int cont = 0;
-		%>
-		<c:forEach items="${m.mascotas}" var="ms">
-
-			<%
-				if (cont == 0 || cont % 4 == 0) {
-						cont++;
-			%>
-			<div class="row">
-
-
-				<div class="col-md-3 card adopag" style="width: 18rem;">
-
-					<img src="${ms.images }" class="card-img-top" alt="${ms.id }">
-					<div class="card-body">
-						<p class="card-text">${ms.descMascota }</p>
-						<p class="card-text">${ms.nombre }</p>
-						<p class="card-text">${ms.fechaNacimento}</p>
-
-					</div>
-				</div>
-
-
-
-				<%
-					} else {
-				%>
-				<div class="col-md-3 card adopag" style="width: 18rem;">
-
-					<img src="${ms.images }" class="card-img-top" alt="${ms.id }">
-					<div class="card-body">
-						<p class="card-text">${ms.descMascota }</p>
-						<p class="card-text">${ms.nombre }</p>
-						<p class="card-text">${ms.fechaNacimento}</p>
-
-					</div>
-				</div>
-
-				<%
-					}
-				%>
-
-				<%
-					if (cont == 4) {
-				%>
-
-			</div>
-
-
-			<%
-				}
-			%>
-
-		</c:forEach>
-	</div>
-
-	
-<div class="foot">
+	<div class="foot">
 		<div class="row">
 			<div class="p-4 col-md-3 social">
 				<h2 class="mb-4">Social Media</h2>
@@ -168,13 +111,15 @@
 	</div>
 
 
-
-
+	
+	
+	
+	
 	<script type="text/javascript" src="/js/adoption.js">
-		
 	</script>
 
 
+   
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

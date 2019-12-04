@@ -18,6 +18,35 @@
 	
 }
 
+#adop{
+	background-image: url('../images/logback.jpg');
+	background-repeat: no-repeat;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.adopage{
+	margin-top: 30px;
+	text-decoration: none;
+	font-family: Zapf Chancery, cursive;
+	margin-right: 10px;
+	width: 100%;
+	
+	
+}
+
+.adopage p{
+	text-align: center;
+}
+
+.adopag{
+	margin-top: 20px;
+	
+	
+}
+
 #inicio{
 	background-image: url("../images/inicio.jpg");
 	background-repeat: no-repeat;

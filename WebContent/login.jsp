@@ -28,7 +28,7 @@
 					<ul class="navbar-nav ml-auto ">
 						<li class="nav-item"><a href="index.jsp" class="nav-link text-white"><i class="fas fa-home"></i> Incio</a></li>
 						<li class="nav-item"><a href="adopcion.jsp" class="nav-link text-white"><i class="fas fa-dog"></i> Adopcion</a></li>
-						<li class="nav-item"><a href="" class="nav-link text-white"><i class="far fa-calendar-alt"></i> Eventos</a></li>
+						<li class="nav-item"><a href="eventos.jsp" class="nav-link text-white"><i class="far fa-calendar-alt"></i> Eventos</a></li>
 						<li class="nav-item"><a href="signup.jsp" class="nav-link text-white"><i class="fas fa-user"></i> Sign-Up</a></li>
 
 					</ul>

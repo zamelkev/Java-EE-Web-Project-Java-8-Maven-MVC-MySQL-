@@ -22,7 +22,7 @@ public class DatabaseConnection {
 		String urlConnection;
 		Properties infoConnection;
 		
-		urlConnection = "jdbc:mysql://localhost:3306/gestionDeAdoptar";
+		urlConnection = "jdbc:mysql://localhost:3306/gestiondeadoptar";
 		infoConnection = new Properties();
 		infoConnection.put("user", this.user);
 		infoConnection.put("password", this.password);
@@ -57,6 +57,25 @@ public class DatabaseConnection {
 		return rs;
 	}
 	
-	
+	public ResultSet dameMascotaMos() throws SQLException {
+		ResultSet rs = null;
+String query = "Select m.id,  m.nombre, m.fechaNacimento, m.images, tm.descmascota\n" + 
+		"from mascota m left join tipomascota tm\n" + 
+		"on m.idTipoMascota = tm.id";
+		
+		Statement st;
+		
+		try {
+			conn = getConn();
+			st = conn.createStatement();
+			rs = st.executeQuery(query);
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return rs;
+	}
 
 }

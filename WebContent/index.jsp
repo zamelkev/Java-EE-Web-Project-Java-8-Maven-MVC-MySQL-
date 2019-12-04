@@ -32,7 +32,7 @@
 						<li class="nav-item"><a href="adopcion.jsp"
 							class="nav-link text-white"><i class="fas fa-dog"></i>
 								Adopcion</a></li>
-						<li class="nav-item"><a href="" class="nav-link text-white"><i
+						<li class="nav-item"><a href="eventos.jsp" class="nav-link text-white"><i
 								class="far fa-calendar-alt"></i> Eventos</a></li>
 						<li class="nav-item"><a href="signup.jsp"
 							class="nav-link text-white"><i class="fas fa-user"></i>
@@ -132,6 +132,15 @@
 
 				</div>
 			</div>
+
+
+			<div class="col-sm-1"></div>
+
+
+		</div>
+
+	</div>
+
 			<div class="foot">
 				<div class="row">
 					<div class="p-4 col-md-3 social">
@@ -200,15 +209,6 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="col-sm-1"></div>
-
-
-		</div>
-
-	</div>
-
-
 
 
 
