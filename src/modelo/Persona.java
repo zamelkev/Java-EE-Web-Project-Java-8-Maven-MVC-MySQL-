@@ -6,11 +6,26 @@ public class Persona {
 	private String primerApellido;
 	private String segundoApellido;
 	private String direccion;
-	private String telefono;
+	
 	private String correo;
+	private String password;
+	private String telefono;
 	
 	
 	
+	public Persona(String primerApellido, String telefono, String password, String nombre, String segundoApellido,
+			String correo, int id, String direccion) {
+		super();
+		this.primerApellido = primerApellido;
+		this.telefono = telefono;
+		this.password = password;
+		this.nombre = nombre;
+		this.segundoApellido = segundoApellido;
+		this.correo = correo;
+		this.id = id;
+		this.direccion = direccion;
+	}
+
 	public Persona(int id, String nombre, String primerApellido, String segundoApellido, String direccion,
 			String telefono, String correo) {
 		super();
@@ -61,6 +76,30 @@ public class Persona {
 	}
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 	
 	
