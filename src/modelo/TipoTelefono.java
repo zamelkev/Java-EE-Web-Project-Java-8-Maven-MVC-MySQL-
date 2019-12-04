@@ -2,29 +2,31 @@ package modelo;
 
 public class TipoTelefono {
 	private int id;
-	private String  descTel;
+	private String  descTipotel;
 	
-	public TipoTelefono(int id, String descTel) {
+	
+	
+	public TipoTelefono(int id, String descTipotel) {
 		super();
 		this.id = id;
-		this.descTel = descTel;
+		this.descTipotel = descTipotel;
 	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public String getDescTel() {
-		return descTel;
+	public String getDescTipotel() {
+		return descTipotel;
 	}
-
-	public void setDescTel(String descTel) {
-		this.descTel = descTel;
+	public void setDescTipotel(String descTipotel) {
+		this.descTipotel = descTipotel;
 	}
+	
+	
+	
+	
 	
 	
 

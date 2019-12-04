@@ -1,5 +1,8 @@
+<%@page import="modelo.TipoTelefono"%>
+<%@page import="modelo.Modelo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="Es-es">
 <head>
@@ -110,6 +113,15 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="password" class="col-sm-3 col-form-label text-white">Password:</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" id="password"
+									placeholder="Escribe una contraseña" required
+									pattern="^[\w]+@{1}[\w]+\.[a-z]{2,3}$">
+								<!-- <span id="infoCo">Correo incorrecto!!!!</span> -->
+							</div>
+						</div>
+						<div class="form-group row">
 							<label for="tel" class="col-sm-3 col-form-label text-white">Teléfono:</label>
 							<div class="col-sm-9">
 								<input type="tel" class="form-control" id="tel"
@@ -124,6 +136,12 @@
 							<div class="col-sm-9">
 								<select class="custom-select my-1 mr-sm-4" id="tipoTel">
 									<option></option>
+									<jsp:useBean id="m" class="modelo.Modelo" scope="page"></jsp:useBean>
+									<c:forEach items="${m.tipoTelefonos}" var="tt">
+									<option value="${tt.id }">${tt.descTipotel }</option>
+									
+									</c:forEach>
+									
 								</select>
 							</div>
 						</div>
@@ -205,10 +223,15 @@
 	</div>
 
 
+	
+	
+	
+	
+	<script type="text/javascript" src="/js/adoption.js">
+	</script>
 
 
-
-
+   
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
