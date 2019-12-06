@@ -96,7 +96,7 @@
 							<div class="col-sm-9">
 								<input type="text" class="form-control" id="direccion"
 									placeholder="Escribe tu dirección" required
-									pattern="^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$">
+									>
 								<!-- <span id="infoApel">Segundo Apellidos es incorrecto!!!</span> -->
 							</div>
 
@@ -113,18 +113,28 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label for="usuario" class="col-sm-3 col-form-label text-white">Usuario:</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="usuario"
+									placeholder="Escribe tu dirección" required
+									>
+								<!-- <span id="infoApel">Segundo Apellidos es incorrecto!!!</span> -->
+							</div>
+
+						</div>
+						<div class="form-group row">
 							<label for="password" class="col-sm-3 col-form-label text-white">Password:</label>
 							<div class="col-sm-9">
 								<input type="password" class="form-control" id="password"
-									placeholder="Escribe una contraseña" required
-									pattern="^[\w]+@{1}[\w]+\.[a-z]{2,3}$">
+									placeholder="Escribe una usuario" required
+									>
 								<!-- <span id="infoCo">Correo incorrecto!!!!</span> -->
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="tel" class="col-sm-3 col-form-label text-white">Teléfono:</label>
+							<label for="telefono" class="col-sm-3 col-form-label text-white">Teléfono:</label>
 							<div class="col-sm-9">
-								<input type="tel" class="form-control" id="tel"
+								<input type="tel" class="form-control" id="telefono"
 									placeholder="Escribe tu Teléfono de contacto"
 									pattern="^[9|6]{1}([\d]{2}[-]*){3}[\d]{2}$" required>
 								<!-- <span id="infoTel">Numero de telefono es incorrecto!!!</span> -->
@@ -227,7 +237,66 @@
 	
 	
 	
-	<script type="text/javascript" src="/js/adoption.js">
+	<script >
+
+
+	var idTipoTelefono ="";
+
+	document.getElementById("tipoTel").addEventListener("change", function() {
+		idTipoTelefono = this.options[this.selectedIndex].value;
+
+		console.log("Id del tipoTelefono.Seleccionado =" +idTipoTelefono);
+	});
+
+	/*para guardar los datos en formato ajax y json */
+
+	document.getElementById("form1").addEventListener("submit", function() {
+		event.preventDefault();
+		event.stopPropagation();
+
+		var objPersona = new Object() ;
+		
+		objPersona.id = 0;
+		objPersona.nombre = document.getElementById("nombre").value;
+		objPersona.primerApellido = document.getElementById("primerApellido").value;
+		objPersona.segundoApellido = document.getElementById("segundoApellido").value;
+		objPersona.direccion = document.getElementById("direccion").value;
+		objPersona.correo = document.getElementById("correo").value;
+		objPersona.usuario = document.getElementById("usuario").value;
+		objPersona.password = document.getElementById("password").value;
+		objPersona.telefono = document.getElementById("telefono").value;
+		objPersona.tipoTelefono = idTipoTelefono;
+		
+		console.log(objPersona);
+
+		var strObjPersonaJSON = JSON.stringify(objPersona);
+		console.log(strObjPersonaJSON);
+		
+		var http = new XMLHttpRequest();
+		http.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+	            var rtaRecibida = this.responseText;
+
+	           /* var objRtaRecibida = JSON.parse(rtaRecibida);
+				console.log("JSON convertido a Objecto JavaScript");
+				console.log(objRtaRecibida);  */
+	            if (rtaRecibida == "SavedCorrectly"){
+	            	location.href="http://localhost:8080/ProyectoTransverWeb/welcome.jsp"
+	            }else{
+	            	location.href="http://localhost:8080/ProyectoTransverWeb/index.jsp"
+	            }
+				
+			}
+
+		}
+
+
+			http.open("POST", "InsertaPersona", true );
+
+			http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			http.send("persona="+strObjPersonaJSON);
+		
+	});
 	</script>
 
 

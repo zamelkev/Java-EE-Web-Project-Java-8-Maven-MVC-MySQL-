@@ -137,7 +137,54 @@
 				</div>
 			</div>
 
+	<script type="text/javascript">
+
+	document.getElementById("form-log").addEventListener("submit", function() {
+		event.preventDefault();
+		event.stopPropagation();
+
+		var objUsuario = new Object();
+
+		objUsuario.id = 0;
+		objUsuario.usuario = document.getElementById("user").value;
+		objUsuario.password = document.getElementById("password").value;
+
+		console.log(objUsuario);
+
+		var strObjUsuarioJSON = JSON.stringify(objUsuario);
+		console.log(strObjUsuarioJSON);
+
+		var http = new XMLHttpRequest();
+
+		http.onreadystatechange = function(){
+	        if(this.readyState == 4 && this.status == 200){
+	             var rtaRecibida = this.responseText;
+
+	             if(rtaRecibida == "UsuarioValido") {
+	                 location.href = "http://localhost:8080/Caso_Practica_4_Web_Java__SQL/reserva.jsp" ;
+	             }else{
+	                 location.href ="http://localhost:8080/Caso_Practica_4_Web_Java__SQL/index.jsp";
+
+
+	                 }
+				
+
+
+
+	            }
+
+			};
+
+			http.open("POST", "AJAXCheckLogin", true );
+
+			http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			http.send("usuario="+strObjUsuarioJSON);
+		
+	});
+		
 	
+
+	</script>
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

@@ -16,6 +16,9 @@ import javax.ejb.Stateless;
 @Local
 public class Modelo {
 	private List<Mascota> mascotas;
+	private Persona persona;
+	private Persona personaId;
+	private List<Persona>personas;
 	private List<TipoTelefono> tipoTelefonos;
 	
 
@@ -50,6 +53,62 @@ public class Modelo {
 
 	public void setMascotas(List<Mascota> mascotas) {
 		this.mascotas = mascotas;
+	}
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+
+
+	public void setPersona(Persona persona) {
+		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		 try {
+			db.insertaPersona(persona);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
+
+	public Persona getPersonaId(int id) {
+		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		
+		try {
+			ResultSet rs = db.damePersona(id);
+			while (rs.next()) {
+				personaId = new Persona(rs.getInt("id"), 
+						rs.getString("nombre"), rs.getString("primerApellido"), rs.getString("segundoApellido"), 
+						rs.getString("direccion"), rs.getString("correo"), rs.getString("usuario"), rs.getString("password"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return personaId;
+	}
+
+
+
+	public void setPersonaId(Persona personaId) {
+		
+		this.personaId = personaId;
+	}
+
+
+
+	public List<Persona> getPersonas() {
+		return personas;
+	}
+
+
+
+	public void setPersonas(List<Persona> personas) {
+		this.personas = personas;
 	}
 
 

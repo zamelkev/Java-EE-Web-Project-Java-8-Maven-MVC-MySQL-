@@ -56,8 +56,6 @@
 						cont++;
 			%>
 			<div class="row">
-
-
 				<div class="col-md-3 card adopag" style="width: 18rem;">
 
 					<img src="${ms.images }" class="card-img-top" alt="${ms.id }">
@@ -68,9 +66,6 @@
 
 					</div>
 				</div>
-
-
-
 				<%
 					} else {
 				%>
@@ -94,8 +89,6 @@
 				%>
 
 			</div>
-
-
 			<%
 				}
 			%>

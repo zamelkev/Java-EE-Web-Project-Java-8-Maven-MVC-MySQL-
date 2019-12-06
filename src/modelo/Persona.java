@@ -8,35 +8,44 @@ public class Persona {
 	private String direccion;
 	
 	private String correo;
+	private String usuario;
 	private String password;
 	private String telefono;
+	private int tipoTelefono;
 	
 	
-	
-	public Persona(String primerApellido, String telefono, String password, String nombre, String segundoApellido,
-			String correo, int id, String direccion) {
-		super();
-		this.primerApellido = primerApellido;
-		this.telefono = telefono;
-		this.password = password;
-		this.nombre = nombre;
-		this.segundoApellido = segundoApellido;
-		this.correo = correo;
-		this.id = id;
-		this.direccion = direccion;
-	}
+
 
 	public Persona(int id, String nombre, String primerApellido, String segundoApellido, String direccion,
-			String telefono, String correo) {
+			String correo, String usuario, String password, String telefono, int tipoTelefono) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.primerApellido = primerApellido;
 		this.segundoApellido = segundoApellido;
 		this.direccion = direccion;
-		this.telefono = telefono;
 		this.correo = correo;
+		this.usuario = usuario;
+		this.password = password;
+		this.telefono = telefono;
+		this.tipoTelefono = tipoTelefono;
 	}
+
+
+	public Persona(int id, String nombre, String primerApellido, String segundoApellido, String direccion,
+			String correo, String usuario, String password) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.primerApellido = primerApellido;
+		this.segundoApellido = segundoApellido;
+		this.direccion = direccion;
+		this.correo = correo;
+		this.usuario = usuario;
+		this.password = password;
+	}
+
+
 
 	public Persona(int id, String nombre, String primerApellido, String segundoApellido, String direccion) {
 		super();
@@ -85,6 +94,15 @@ public class Persona {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+    
+	
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
 
 	public String getPassword() {
 		return password;
@@ -100,6 +118,14 @@ public class Persona {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+
+	public int getTipoTelefono() {
+		return tipoTelefono;
+	}
+
+	public void setTipoTelefono(int tipoTelefono) {
+		this.tipoTelefono = tipoTelefono;
 	}
 	
 	
