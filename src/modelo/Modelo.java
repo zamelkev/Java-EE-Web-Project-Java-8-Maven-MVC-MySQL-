@@ -20,6 +20,7 @@ public class Modelo {
 	private Persona personaId;
 	private List<Persona>personas;
 	private List<TipoTelefono> tipoTelefonos;
+	private List<Evento> eventos;
 	
 
 	/**
@@ -32,7 +33,7 @@ public class Modelo {
 	
 
 	public List<Mascota> getMascotas() {
-		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		DatabaseConnection db = new DatabaseConnection("kzamora", "Temp2019$$");
 		mascotas = new ArrayList<>();
 		
 		try {
@@ -62,7 +63,7 @@ public class Modelo {
 
 
 	public void setPersona(Persona persona) {
-		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		DatabaseConnection db = new DatabaseConnection("kzamora", "Temp2019$$");
 		 try {
 			db.insertaPersona(persona);
 		} catch (SQLException e) {
@@ -75,7 +76,7 @@ public class Modelo {
 
 
 	public Persona getPersonaId(int id) {
-		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		DatabaseConnection db = new DatabaseConnection("kzamora", "Temp2019$$");
 		
 		try {
 			ResultSet rs = db.damePersona(id);
@@ -114,7 +115,7 @@ public class Modelo {
 
 
 	public List<TipoTelefono> getTipoTelefonos() {
-		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		DatabaseConnection db = new DatabaseConnection("kzamora", "Temp2019$$");
 
 		tipoTelefonos = new ArrayList<>();
 
@@ -131,9 +132,41 @@ public class Modelo {
 		return tipoTelefonos;
 	}
 
+	
+	
+	
 	public void setTipoTelefonos(List<TipoTelefono> tipoTelefonos) {
 
 		this.tipoTelefonos = tipoTelefonos;
 	}
+
+
+	//	KZ - Inicio
+	public List<Evento> getEventos() {
+		DatabaseConnection db = new DatabaseConnection("kzamora", "Temp2019$$");
+		eventos = new ArrayList<>();
+		
+		try {
+			ResultSet rs = db.dameEventos();
+			while(rs.next()) {
+				eventos.add(new Evento(rs.getInt("id"), rs.getString("titulo"), rs.getObject("fechaPublicacion",
+						LocalDate.class), rs.getString("texto"), rs.getString("images"), rs.getString("autor"),
+						rs.getString("referencias")));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return eventos;
+	}
+
+
+
+	public void setEventos(List<Evento> eventos) {
+		this.eventos = eventos;
+	}
+	// KZ - Fin
+	
 
 }

@@ -190,6 +190,24 @@ public class DatabaseConnection {
 		
 	}
 
+	public ResultSet dameEventos() throws SQLException {
+		ResultSet rs = null;
+		String query = "Select e.id, e.titulo, e.fechaPublicacion, e.texto, e.images, e.referencias,\n" + 
+				"	e.autor from eventos e;";
 
+		Statement st;
+
+		try {
+			conn = getConn();
+			st = conn.createStatement();
+			rs = st.executeQuery(query);
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return rs;
+	}
 
 }
