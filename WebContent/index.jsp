@@ -27,14 +27,14 @@
 				<div class="collapse navbar-collapse justify-content-center"
 					id="collapsenavbar">
 					<ul class="navbar-nav ml-auto ">
-						<li class="nav-item active"><a href="index.jsp"
+						<li class="nav-item active"><a id="toIndex"
 							class="nav-link text-white"><i class="fas fa-home"></i> Incio</a></li>
-						<li class="nav-item"><a href="adopcion.jsp"
+						<li class="nav-item"><a id="toAdopcion"
 							class="nav-link text-white"><i class="fas fa-dog"></i>
 								Adopcion</a></li>
-						<li class="nav-item"><a href="eventos.jsp" class="nav-link text-white"><i
+						<li class="nav-item"><a id="toEventos" class="nav-link text-white"><i
 								class="far fa-calendar-alt"></i> Eventos</a></li>
-						<li class="nav-item"><a href="signup.jsp"
+						<li class="nav-item"><a id="toSignUp"
 							class="nav-link text-white"><i class="fas fa-user"></i>
 								Sign-Up</a></li>
 
@@ -43,8 +43,6 @@
 			</div>
 
 		</nav>
-
-
 	</header>
 	<div class="container-fluid  pagPrinc">
 		<div class="row">
@@ -157,16 +155,16 @@
 					<div class="p-4 col-md-3 footli">
 						<h2 class="mb-4">Mapsite</h2>
 						<ul class="list-unstyled">
-							<li><a href="index.jsp"><i class="fas fa-home"></i>
+							<li><a id="toIndex1"><i class="fas fa-home"></i>
 									Incio</a></li>
 							<br>
-							<li><a href="adopcion.jsp"><i class="fas fa-dog"></i>
+							<li><a id="toAdopcion1"><i class="fas fa-dog"></i>
 									Adopcion</a></li>
 							<br>
-							<li><a href="#"><i class="far fa-calendar-alt"></i>
+							<li><a id="toEventos1"><i class="far fa-calendar-alt"></i>
 									Eventos</a></li>
 							<br>
-							<li><a href="signup.jsp"><i class="fas fa-user"></i>
+							<li><a id="toSignUp1"><i class="fas fa-user"></i>
 									Sign-Up</a></li>
 						</ul>
 					</div>
@@ -218,5 +216,62 @@
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/22e0b86cee.js"></script>
+	<script>
+		document.getElementById("toIndex").addEventListener("click",
+				function() {
+					location.href = "MuestraIndexController?=";
+
+				});
+	</script>
+	<script>
+		document.getElementById("toAdopcion").addEventListener("click",
+				function() {
+					location.href = "MuestraAdopcionController?=";
+
+				});
+	</script>
+	<script>
+		document.getElementById("toEventos").addEventListener("click",
+				function() {
+					location.href = "MuestraEventosController?=";
+
+				});
+	</script>
+	<script>
+		document.getElementById("toSignUp").addEventListener("click",
+				function() {
+					location.href = "MuestraSignUpController?=";
+
+				});
+	</script>
+	
+	<script>
+		document.getElementById("toIndex1").addEventListener("click",
+				function() {
+					location.href = "MuestraIndexController?=";
+
+				});
+	</script>
+	<script>
+		document.getElementById("toAdopcion1").addEventListener("click",
+				function() {
+					location.href = "MuestraAdopcionController?=";
+
+				});
+	</script>
+	<script>
+		document.getElementById("toEventos1").addEventListener("click",
+				function() {
+					location.href = "MuestraEventosController?=";
+
+				});
+	</script>
+	<script>
+		document.getElementById("toSignUp1").addEventListener("click",
+				function() {
+					location.href = "MuestraSignUpController?=";
+
+				});
+	</script>
 </body>
 </html>
