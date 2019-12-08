@@ -196,18 +196,18 @@
 			<div class="p-4 col-md-3 cont">
 				<h2 class="mb-4">Contacto</h2>
 				<p>
-					<a href="#" class="text-white"> <i class="fa fa-phone"></i>
-						+34-678942577
+					<a href="tel:+34-678942577" class="text-white"> <i class="fa fa-phone"></i>
+								+34-678942577
 
 					</a>
 				</p>
 				<p>
-					<a href="#" class="text-white"> <i class="fa fa-envelope-o"></i>
-						adoptame.cs@gmail.com
+					<a href="mailto:adoptame.cs@gmail.com" class="text-white"> <i
+						class="fa fa-envelope-o"></i> adoptame.cs@gmail.com
 					</a>
 				</p>
 				<p>
-					<a href="#" class="text-white"> <i class="fa fa-map "></i> Av.
+					<a href="toGoogleMaps" class="text-white"> <i class="fa fa-map "></i> Av.
 						Hermanos Bou, numero 79, 12003 Castellon de la Plana.
 
 					</a>
@@ -367,6 +367,13 @@
 		document.getElementById("toSignUp1").addEventListener("click",
 				function() {
 					location.href = "MuestraSignUpController?=";
+
+				});
+	</script>
+	<script>
+		document.getElementById("toGoogleMaps").addEventListener("click",
+				function() {
+					location.href = "MuestraGoogleMapsController?=";
 
 				});
 	</script>
