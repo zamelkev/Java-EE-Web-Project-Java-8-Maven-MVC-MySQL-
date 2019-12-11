@@ -79,9 +79,20 @@
 					<p>Puedes encontrarnos en la Av. dels Germans Bou, número 79
 						(12003 Castellón de la Plana). <br>Contáctanos, enviando un correo
 						electrónico a nuestra dirección adoptame.cs@gmail.com</p>
+						 
+						 <div class="row" id="btd">
+						 <div class="col-10"></div>
+						 <div class="col-2">
+						 <button type="submit" class="btn btn-success" id="btn1">Login</button>
+						 
+						 </div>
+						 
+						 </div>
+						
 
 				</div>
-				<div class="contianer-fluid">
+	            
+	            				<div class="contianer-fluid">
 					<div class="row">
 						<div id="carouselExampleIndicators"
 							class="carousel slide col-md-6" data-ride="carousel">
@@ -140,6 +151,8 @@
 		</div>
 
 	</div>
+	
+
 
 			<div class="foot">
 				<div class="row">
@@ -191,14 +204,14 @@
 						</p>
 					</div>
 					<div class="p-4 col-md-3">
-						<h2 class="mb-4">Suscribirse</h2>
+						<h2 class="mb-4">Login</h2>
 						<form>
 							<fieldset class="form-group">
-								<label for="exampleInputEmail1"></label> Suscribirse a nuestro
+								<label for="login"></label> Suscribirse a nuestro
 								newsletter <input type="email" class="form-control"
 									placeholder="Enter email">
 							</fieldset>
-							<button type="submit" class="btn btn-success">Submit</button>
+							<button type="submit" class="btn btn-success">Login</button>
 						</form>
 					</div>
 				</div>
@@ -210,7 +223,12 @@
 				</div>
 			</div>
 
+			<script>
 
+			document.getElementById("btn1").addEventListener("click", function() {
+				location.href = "MuestraLogin"
+			});
+			</script>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script

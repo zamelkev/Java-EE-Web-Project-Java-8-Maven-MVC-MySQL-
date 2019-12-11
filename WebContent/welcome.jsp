@@ -11,7 +11,7 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body id="inicio">
+<body id="">
 	<header class="main-header">
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark mynav">
 			<div class="container">

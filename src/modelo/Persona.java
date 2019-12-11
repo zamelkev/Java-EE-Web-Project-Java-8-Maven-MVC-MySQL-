@@ -45,6 +45,18 @@ public class Persona {
 		this.password = password;
 	}
 
+   
+
+	public Persona() {
+		super();
+	}
+
+
+	public Persona(String usuario, String password) {
+		super();
+		this.usuario = usuario;
+		this.password = password;
+	}
 
 
 	public Persona(int id, String nombre, String primerApellido, String segundoApellido, String direccion) {

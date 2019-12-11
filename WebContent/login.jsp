@@ -46,15 +46,15 @@
   <div class="form-group">
   
     <label for="user" class="text-dark text-monospace"><i class="fas fa-users"></i> User</label>
-    <input type="email" class="form-control" id="user">
+    <input type="text" class="form-control" name="user" id="user">
     
   </div>
   <div class="form-group">
     <label for="password" class="text-monospace text-dark"><i class="fas fa-key"></i> Password</label>
-    <input type="password" class="form-control" id="password">
+    <input type="password" class="form-control" id="password" name="password">
   </div>
  
-  <button type="submit" class="btn btn-primary btn-block">Submit</button>
+  <button type="submit" class="btn btn-primary btn-block">Enviar</button>
 </form>
 				
 				
@@ -161,9 +161,9 @@
 	             var rtaRecibida = this.responseText;
 
 	             if(rtaRecibida == "UsuarioValido") {
-	                 location.href = "http://localhost:8080/Caso_Practica_4_Web_Java__SQL/reserva.jsp" ;
+	                 location.href = "MuestraWelcome" ;
 	             }else{
-	                 location.href ="http://localhost:8080/Caso_Practica_4_Web_Java__SQL/index.jsp";
+	                 location.href ="http://localhost:8080/ProyectoTransverWeb/index.jsp";
 
 
 	                 }
@@ -175,7 +175,7 @@
 
 			};
 
-			http.open("POST", "AJAXCheckLogin", true );
+			http.open("POST", "LoginCheck", true );
 
 			http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			http.send("usuario="+strObjUsuarioJSON);

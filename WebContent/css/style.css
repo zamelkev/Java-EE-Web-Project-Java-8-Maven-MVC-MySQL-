@@ -18,6 +18,7 @@
 	
 }
 
+
 #adop{
 	background-image: url('../images/logback.jpg');
 	background-repeat: no-repeat;
@@ -76,6 +77,7 @@
 	border: 0px solid #ffffff;
 	padding: 30px 40px;
 	margin-top: 20vh;
+
 
 -webkit-box-shadow: -1px 4px 141px 24px rgba(0,0,0,0.78);
 -moz-box-shadow: -1px 4px 141px 24px rgba(0,0,0,0.78);

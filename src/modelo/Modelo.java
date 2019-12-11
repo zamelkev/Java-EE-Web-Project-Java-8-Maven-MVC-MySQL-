@@ -20,6 +20,7 @@ public class Modelo {
 	private Persona personaId;
 	private List<Persona>personas;
 	private List<TipoTelefono> tipoTelefonos;
+	private Persona personaUsuario;
 	
 
 	/**
@@ -135,5 +136,31 @@ public class Modelo {
 
 		this.tipoTelefonos = tipoTelefonos;
 	}
+
+
+
+	public Persona getPersonaUsuario(Persona pu) {
+		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		personaUsuario = null;
+		
+		try {
+			ResultSet rs =db.dameLogin(pu);
+			if(rs.next()) {
+				personaUsuario= new Persona(rs.getString("usuario"), rs.getString("password"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return personaUsuario;
+	}
+
+
+
+	public void setPersonaUsuario(Persona personaUsuario) {
+		this.personaUsuario = personaUsuario;
+	}
+	
+	
 
 }
