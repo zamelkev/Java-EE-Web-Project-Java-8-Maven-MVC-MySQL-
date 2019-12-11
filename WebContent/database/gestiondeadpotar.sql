@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `gestiondeadoptar` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `gestiondeadoptar`;
--- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.18, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: gestiondeadoptar
 -- ------------------------------------------------------
@@ -46,6 +46,35 @@ LOCK TABLES `adopcion` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `eventos`
+--
+
+DROP TABLE IF EXISTS `eventos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `eventos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
+  `fechaPublicacion` date DEFAULT NULL,
+  `texto` varchar(150) COLLATE utf8_spanish2_ci NOT NULL,
+  `images` varchar(150) COLLATE utf8_spanish2_ci NOT NULL,
+  `autor` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
+  `referencias` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eventos`
+--
+
+LOCK TABLES `eventos` WRITE;
+/*!40000 ALTER TABLE `eventos` DISABLE KEYS */;
+INSERT INTO `eventos` VALUES (1,'Inauguramos nuestra web','2019-12-06','Bienvenidos a nuestro sitio web. ¡Adopta a tu compañero ideal! Dale una segunda oportunidad, mejora tu personalidad.','https://www.soidog.org/sites/default/files/soidog-sponsor-image/Paloka_2.jpg','Adóptame','#adoptaElTuyo, #tuMejorAmigo, #tuMascota, #adoptame, #venAVernos'),(2,'¡Adopta tu compañero!','2019-12-07','Puede ser tu mejor amig@ ¿Le darás una oportunidad?','https://www.soidog.org/sites/default/files/styles/large/public/soidog-sponsor-image/S_Mattana_1.jpg?itok=5w-_9EVx','Adóptame','#adoptaElTuyo, #tuMejorAmigo, #tuMascota, #adoptame, #venAVernos'),(3,'¡Adopta tu compañera!','2019-12-07','Puede ser tu mejor amig@ ¿Le dejarás entrar?','https://www.soidog.org/sites/default/files/Aemir.jpg','Adóptame','#adoptaElTuyo, #tuMejorAmigo, #tuMascota, #adoptame, #venAVernos'),(4,'1ª Feria Pro-Animalista','2020-01-12','¡Aprovecha tu oportunidad, encuéntralo, deja de buscar!','https://www.soidog.org/sites/default/files/styles/large/public/soidog-adopt-image/MomojangThumbnail.jpg?itok=Lu_Mwisy','Adóptame','#adoptaElTuyo, #tuMejorAmigo, #tuMascota, #adoptame, #venAVernos'),(5,'¡Informate! Visítanos.','2019-12-15','Ven a la Av. Hermanos Bou, numero 79, 12003 Castellon de la Plana','http://www.kevin-zamora.com/Files/Image/LogoEventos.jpg','Adóptame','#adoptaElTuyo, #tuMejorAmigo, #tuMascota, #adoptame, #venAVernos');
+/*!40000 ALTER TABLE `eventos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `mascota`
 --
 
@@ -57,7 +86,7 @@ CREATE TABLE `mascota` (
   `nombre` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `fechaNacimento` date DEFAULT NULL,
   `idTipoMascota` int(11) NOT NULL,
-  `images` varchar(150) COLLATE utf8_spanish2_ci NOT NULL,
+  `images` varchar(150) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_mascota_tipoMascota1_idx` (`idTipoMascota`),
   CONSTRAINT `fk_mascota_tipoMascota1` FOREIGN KEY (`idTipoMascota`) REFERENCES `tipomascota` (`id`)
@@ -89,7 +118,7 @@ CREATE TABLE `persona` (
   `direccion` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `correo` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `usuario` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `password` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
+  `password` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `correo_UNIQUE` (`correo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
@@ -192,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-06 20:08:55
+-- Dump completed on 2019-12-08 12:51:26

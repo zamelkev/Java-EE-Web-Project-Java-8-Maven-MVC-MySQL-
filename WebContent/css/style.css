@@ -48,6 +48,40 @@
 	
 }
 
+
+/* KZ - Inicio */
+
+#eventpag{
+	background-image: url('../images/logback.jpg');
+	background-repeat: no-repeat;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.eventpage{
+	margin-top: 30px;
+	text-decoration: none;
+	font-family: Zapf Chancery, cursive;
+	margin-right: 10px;
+	width: 100%;
+	
+	
+}
+
+.eventpage p{
+	text-align: center;
+}
+
+.eventpag{
+	margin-top: 20px;
+	
+	
+}
+
+/* KZ - Fin */
+
 #inicio{
 	background-image: url("../images/inicio.jpg");
 	background-repeat: no-repeat;

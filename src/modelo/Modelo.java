@@ -20,7 +20,10 @@ public class Modelo {
 	private Persona personaId;
 	private List<Persona>personas;
 	private List<TipoTelefono> tipoTelefonos;
+
 	private Persona personaUsuario;
+	private List<Evento> eventos;
+
 	
 
 	/**
@@ -132,12 +135,13 @@ public class Modelo {
 		return tipoTelefonos;
 	}
 
+	
+	
+	
 	public void setTipoTelefonos(List<TipoTelefono> tipoTelefonos) {
 
 		this.tipoTelefonos = tipoTelefonos;
 	}
-
-
 
 	public Persona getPersonaUsuario(Persona pu) {
 		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
@@ -161,6 +165,33 @@ public class Modelo {
 		this.personaUsuario = personaUsuario;
 	}
 	
+	//	KZ - Inicio
+	public List<Evento> getEventos() {
+		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		eventos = new ArrayList<>();
+		
+		try {
+			ResultSet rs = db.dameEventos();
+			while(rs.next()) {
+				eventos.add(new Evento(rs.getInt("id"), rs.getString("titulo"), rs.getObject("fechaPublicacion",
+						LocalDate.class), rs.getString("texto"), rs.getString("images"), rs.getString("autor"),
+						rs.getString("referencias")));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return eventos;
+	}
+
+
+
+	public void setEventos(List<Evento> eventos) {
+		this.eventos = eventos;
+	}
+	// KZ - Fin
+
 	
 
 }

@@ -163,7 +163,7 @@
 	             if(rtaRecibida == "UsuarioValido") {
 	                 location.href = "MuestraWelcome" ;
 	             }else{
-	                 location.href ="http://localhost:8080/ProyectoTransverWeb/index.jsp";
+	                 location.href ="MuestraIndexController";
 
 
 	                 }
