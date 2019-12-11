@@ -41,7 +41,7 @@ public class DatabaseConnection {
 
 	public ResultSet dameTipoTel() throws SQLException {
 		ResultSet rs = null;
-		String query = "select * from tipoTelefono";
+		String query = "select * from tipotelefono";
 
 		Statement st;
 

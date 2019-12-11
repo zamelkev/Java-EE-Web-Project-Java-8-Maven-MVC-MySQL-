@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Incio</title>
+<title>AdoptarMe</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -221,12 +221,7 @@
 				</div>
 			</div>
 
-			<script>
-
-			document.getElementById("btn1").addEventListener("click", function() {
-				location.href = "MuestraLogin"
-			});
-			</script>
+			
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script
@@ -235,63 +230,61 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/22e0b86cee.js"></script>
 	<script>
+	document.getElementById("btn1").addEventListener("click", function() {
+		location.href = "MuestraLogin"
+	});
+	
 		document.getElementById("toIndex").addEventListener("click",
 				function() {
 					location.href = "MuestraIndexController?=";
 
 				});
-	</script>
-	<script>
+	
+	
 		document.getElementById("toAdopcion").addEventListener("click",
 				function() {
 					location.href = "MuestraAdopcionController?=";
 
 				});
-	</script>
-	<script>
+	
+	
 		document.getElementById("toEventos").addEventListener("click",
 				function() {
 					location.href = "MuestraEventosController?=";
 
 				});
-	</script>
-	<script>
+	
 		document.getElementById("toSignUp").addEventListener("click",
 				function() {
 					location.href = "MuestraSignUpController?=";
 
 				});
-	</script>
-	
-	<script>
+
 		document.getElementById("toIndex1").addEventListener("click",
 				function() {
 					location.href = "MuestraIndexController?=";
 
 				});
-	</script>
-	<script>
+	
 		document.getElementById("toAdopcion1").addEventListener("click",
 				function() {
 					location.href = "MuestraAdopcionController?=";
 
 				});
-	</script>
-	<script>
+	
 		document.getElementById("toEventos1").addEventListener("click",
 				function() {
 					location.href = "MuestraEventosController?=";
 
 				});
-	</script>
-	<script>
+	
+	
 		document.getElementById("toSignUp1").addEventListener("click",
 				function() {
 					location.href = "MuestraSignUpController?=";
 
 				});
-	</script>
-	<script>
+	
 		document.getElementById("toGoogleMaps").addEventListener("click",
 				function() {
 					location.href = "MuestraGoogleMapsController?=";
