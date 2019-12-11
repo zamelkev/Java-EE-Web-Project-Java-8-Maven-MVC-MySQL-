@@ -131,6 +131,33 @@ public class DatabaseConnection {
 		}
 
 	}
+	
+	public void adopcion(Adopcion a) throws SQLException {
+		String query ="INSERT INTO `gestiondeadoptar`.`adopcion` "
+				+ "(`idPersona`, `idMascota`) VALUES (?, ?)";
+		
+		PreparedStatement ps = null;
+		
+		try {
+			conn =getConn();
+			conn.setAutoCommit(false);
+			
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, a.getIdPersona());
+			ps.setInt(2, a.getIdMascota());
+			ps.executeUpdate();
+			conn.commit();
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			
+			ps.close();
+			conn.setAutoCommit(true);
+		}
+	}
      
 	public ResultSet damePersona(int id) throws SQLException {
 		ResultSet rs = null;
@@ -209,5 +236,8 @@ public class DatabaseConnection {
 
 		return rs;
 	}
+	
+	
+	
 
 }

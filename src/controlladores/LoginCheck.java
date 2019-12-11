@@ -3,6 +3,7 @@ package controlladores;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,15 +48,15 @@ public class LoginCheck extends HttpServlet {
 		response.setContentType("text/html");
 		HttpSession session = request.getSession();
 		
-		Gson gs = new Gson();
+		//Gson gs = new Gson();
 		
-		Persona persona = gs.fromJson(request.getParameter("usuario"), Persona.class);
+		//Persona persona = gs.fromJson(request.getParameter("usuario"), Persona.class);
 		
 		
 	
-		Modelo m = new Modelo();
+		//Modelo m = new Modelo();
 		
-		Persona pu = m.getPersonaUsuario(persona);
+		/*Persona pu = m.getPersonaUsuario(persona);
 		
 		PrintWriter out = response.getWriter();
 		if(pu != null ) {
@@ -65,8 +66,27 @@ public class LoginCheck extends HttpServlet {
 		}else {
 			// request.getRequestDispatcher("reserva.jsp").forward(request, response);
 			out.print("usuarioNoValido");
-		}
+		}*/
 		
+		String usuario  = request.getParameter("user");
+		String password = request.getParameter("password");
+		
+		Modelo m = new Modelo();
+	
+		Persona pu = new Persona("usuario", "password");
+		PrintWriter out = response.getWriter();
+		if (pu != null && session.getAttribute("usuario") == null) {
+			out.print("Welcome, " + usuario);
+			session.setAttribute("usuario", usuario);
+			session.setMaxInactiveInterval(120);
+			request.getRequestDispatcher("welcome.jsp").forward(request, response);
+		}else {
+			//out.print("Sorry, username or password error!");  
+			//request.getRequestDispatcher("login.jsp").forward(request, response);
+		       RequestDispatcher rd = request.getRequestDispatcher("login.html");
+		         out.println("<font color=red>Either user name or password is wrong.</font>");
+		         rd.include(request, response);
+		}
 		
 	}
 

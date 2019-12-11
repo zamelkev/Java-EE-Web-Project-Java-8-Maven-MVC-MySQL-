@@ -41,7 +41,7 @@
 			<div class="row">
 				<div class="col-md-4 "></div>
 				<div class="col-md-4 ">
-				    <form id="form-log">
+				    <form action="LoginCheck" method="post" id="form-log">
 				    <h3 >Login</h3>
   <div class="form-group">
   
@@ -139,7 +139,7 @@
 
 	<script type="text/javascript">
 
-	document.getElementById("form-log").addEventListener("submit", function() {
+	/*document.getElementById("form-log").addEventListener("submit", function() {
 		event.preventDefault();
 		event.stopPropagation();
 
@@ -180,7 +180,7 @@
 			http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			http.send("usuario="+strObjUsuarioJSON);
 		
-	});
+	});*/
 		
 	
 

@@ -12,7 +12,7 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body id="inicio">
+<body id="">
 	<header class="main-header">
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark mynav">
 			<div class="container">
@@ -49,9 +49,23 @@
 	<div class="row">
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
-	Bienvenido ${sessionScope.usuario}
-	<h2><c:out value="${persona.nombre}"></c:out></h2>
-		<h3><c:out value="${persona.primerApellido}"></c:out></h3>
+	
+	   <%
+      if (session != null) {
+         if (session.getAttribute("usuario") != null) {
+            String name = (String) session.getAttribute("usuario");
+            out.print("Hello, " + name + "  Welcome to ur Profile");
+         } else {
+            response.sendRedirect("login.jsp");
+         }
+      }
+   %>
+
+		
+		
+	<form action="Logout" method="post">
+      <button type="submit" class="btn btn-primary">logout</button>
+   </form>
 	
 	</div>
 	<div class="col-md-2"></div>

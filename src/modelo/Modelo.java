@@ -23,6 +23,7 @@ public class Modelo {
 
 	private Persona personaUsuario;
 	private List<Evento> eventos;
+	private Adopcion adopcion;
 
 	
 
@@ -165,6 +166,26 @@ public class Modelo {
 		this.personaUsuario = personaUsuario;
 	}
 	
+	
+	
+	public Adopcion getAdopcion() {
+		return adopcion;
+	}
+
+
+
+	public void setAdopcion(Adopcion adopcion) {
+		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		try {
+			db.adopcion(adopcion);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+
+
 	//	KZ - Inicio
 	public List<Evento> getEventos() {
 		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
