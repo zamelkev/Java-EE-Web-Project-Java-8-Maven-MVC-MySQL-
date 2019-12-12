@@ -79,7 +79,7 @@
 		</div>
 
 	</div>
-	<!--  
+	
    <div class="container">
    <div class="row">
    <div class="col-md-1"></div>
@@ -94,12 +94,17 @@
    <label>correo:</label><h3><c:out value="${persona.correo}"></c:out></h3>
    
    </div>
+   <div>
+    <button type="submit" id="btn2" class="btn btn-primary">Adoptar</button>
+   </div>
+  
+   <div class="col-md-1">
    
-   
-   <div class="col-md-1"></div>
+   </div>
    </div>
 
-   </div> -->
+   </div>
+   <
 	<div class="foot">
 		<div class="row">
 			<div class="p-4 col-md-3 social">
@@ -166,6 +171,11 @@
 	</div>
 
 	<script>
+	document.getElementById("btn2").addEventListener("click",
+			function() {
+				location.href = "MuestraAdoptController";
+
+			});
 		document.getElementById("toIndex").addEventListener("click",
 				function() {
 					location.href = "MuestraIndexController?=";

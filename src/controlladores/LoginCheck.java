@@ -73,8 +73,10 @@ public class LoginCheck extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		Modelo m = new Modelo();
+		
 	
 		Persona pu = new Persona("usuario", "password");
+		//Persona pu = m.getPersonaUsuario(pers);
 		PrintWriter out = response.getWriter();
 		if (pu != null && session.getAttribute("usuario") == null) {
 			out.print("Welcome," + usuario);

@@ -140,7 +140,7 @@ public class Modelo {
 			while (rs.next()) {
 				personas.add(new Persona(rs.getInt("id"), 
 						rs.getString("nombre"), rs.getString("primerApellido"), rs.getString("segundoApellido"), 
-						rs.getString("direccion"), rs.getString("correo"), rs.getString("usuario"), rs.getString("password")));
+						rs.getString("direccion"), rs.getString("correo")));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

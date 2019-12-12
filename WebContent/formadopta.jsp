@@ -1,6 +1,8 @@
+<%@page import="modelo.Persona"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@page import="java.util.List"%>
+<%@page import="modelo.Modelo"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="Es-es">
@@ -92,17 +94,44 @@
 						<label class="col-sm-3 col-form-label text-white">persona
 							</label>
 						<div class="col-sm-9">
-							<select class="custom-select my-1 mr-sm-4" id="per">
-								<option></option>
+										<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+       <th scope="col">Nombre</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Dirrecion</th>
+ <th scope="col">correo</th>
+  </thead>
+  <tbody>
+  <% List<Persona>persona = m.getPersonas();
+  
+  for(Persona p: persona){
+	  
+	   %>
+	    <tr>
+	    <td><input class="form-check-input" type="checkbox" value="<%=p.getId() %>" id="Check1"></td>
+	    <td><%=p.getNombre() %></td>
+	    <td><%=p.getPrimerApellido() %></td>
+	    <td><%=p.getSegundoApellido() %></td>
+	    <td><%=p.getDireccion() %></td>
+	    
+	    <td><%=p.getCorreo() %></td>
+	    </tr>
+	    <% 
+	    	  }
+	      
+	  
+	  %>
+  
 
-								<c:forEach items="${m.personas}" var="p">
-								<option value="${p.id}">${p.nombre}</option>
-
-								</c:forEach>
-
-							</select>
+  
+  </tbody>
+  </table>
 						</div>
 					</div>
+		
 					<div class="col-md-10">
 						<input type="submit" class="btn btn-primary" value="Enviar">
 					</div>
