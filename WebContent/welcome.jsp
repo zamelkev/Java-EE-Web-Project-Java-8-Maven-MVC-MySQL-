@@ -49,22 +49,24 @@
 	<div class="container-fluid prefil" >
 		<div class="row" >
 			<div class="col-md-4">
+			<h4>
 				<%
 					if (session != null) {
 						if (session.getAttribute("usuario") != null) {
 							String name = (String) session.getAttribute("usuario");
-				%>
-				<h4>
-					<%
+				
+				
+					
 						out.print("Hola, " + name + " Bienvenido a tu perfil ");
-					%>
-				</h4>
-				<%
+					
+				
+				
 					} else {
 							response.sendRedirect("login.jsp");
 						}
 					}
 				%>
+				</h4>
 			</div>
 			<div class="col-md-7"></div>
 			<div class="col-md-1">
@@ -77,6 +79,7 @@
 		</div>
 
 	</div>
+	<!--  
    <div class="container">
    <div class="row">
    <div class="col-md-1"></div>
@@ -91,10 +94,12 @@
    <label>correo:</label><h3><c:out value="${persona.correo}"></c:out></h3>
    
    </div>
+   
+   
    <div class="col-md-1"></div>
    </div>
 
-   </div>
+   </div> -->
 	<div class="foot">
 		<div class="row">
 			<div class="p-4 col-md-3 social">

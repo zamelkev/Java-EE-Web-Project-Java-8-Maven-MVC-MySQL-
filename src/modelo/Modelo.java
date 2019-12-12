@@ -132,6 +132,21 @@ public class Modelo {
 
 
 	public List<Persona> getPersonas() {
+		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+
+		personas = new ArrayList<>();
+		try {
+			ResultSet rs = db.dameP();
+			while (rs.next()) {
+				personas.add(new Persona(rs.getInt("id"), 
+						rs.getString("nombre"), rs.getString("primerApellido"), rs.getString("segundoApellido"), 
+						rs.getString("direccion"), rs.getString("correo"), rs.getString("usuario"), rs.getString("password")));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 		return personas;
 	}
 

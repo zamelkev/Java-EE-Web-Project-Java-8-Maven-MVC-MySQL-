@@ -45,7 +45,7 @@ public class Logout extends HttpServlet {
 	      HttpSession session = request.getSession(false);
 	      // session.setAttribute("user", null);
 	      session.removeAttribute("usuario");
-	      session.getMaxInactiveInterval();
+	      //session.getMaxInactiveInterval();
 	      response.sendRedirect("index.jsp");
 	}
 

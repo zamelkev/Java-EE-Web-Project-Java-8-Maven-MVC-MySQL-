@@ -77,9 +77,9 @@ public class LoginCheck extends HttpServlet {
 		Persona pu = new Persona("usuario", "password");
 		PrintWriter out = response.getWriter();
 		if (pu != null && session.getAttribute("usuario") == null) {
-			out.print("Welcome, " + usuario);
+			out.print("Welcome," + usuario);
 			session.setAttribute("usuario", usuario);
-			session.setMaxInactiveInterval(120);
+			//session.setMaxInactiveInterval(120);
 			request.getRequestDispatcher("welcome.jsp").forward(request, response);
 		}else {
 			//out.print("Sorry, username or password error!");  

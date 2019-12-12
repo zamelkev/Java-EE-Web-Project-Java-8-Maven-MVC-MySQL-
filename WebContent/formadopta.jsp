@@ -88,6 +88,21 @@
 							</select>
 						</div>
 					</div>
+					<div class="form-group row">
+						<label class="col-sm-3 col-form-label text-white">persona
+							</label>
+						<div class="col-sm-9">
+							<select class="custom-select my-1 mr-sm-4" id="per">
+								<option></option>
+
+								<c:forEach items="${m.personas}" var="p">
+								<option value="${p.id}">${p.nombre}</option>
+
+								</c:forEach>
+
+							</select>
+						</div>
+					</div>
 					<div class="col-md-10">
 						<input type="submit" class="btn btn-primary" value="Enviar">
 					</div>

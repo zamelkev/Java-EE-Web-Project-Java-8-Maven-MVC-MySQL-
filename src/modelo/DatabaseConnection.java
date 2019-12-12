@@ -59,7 +59,7 @@ public class DatabaseConnection {
 	}
 	public ResultSet dameP() throws SQLException {
 		ResultSet rs= null;
-		String query = "select * from persona";
+		String query = "SELECT * FROM persona";
 		Statement st;
 		try {
 			conn = getConn();
