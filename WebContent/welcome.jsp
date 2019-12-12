@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="Es-es">
 <head>
@@ -33,8 +33,9 @@
 						<li class="nav-item"><a id="toAdopcion"
 							class="nav-link text-white"><i class="fas fa-dog"></i>
 								Adopcion</a></li>
-						<li class="nav-item"><a id="toEventos" class="nav-link text-white"><i
-								class="far fa-calendar-alt"></i> Eventos</a></li>
+						<li class="nav-item"><a id="toEventos"
+							class="nav-link text-white"><i class="far fa-calendar-alt"></i>
+								Eventos</a></li>
 						<li class="nav-item"><a id="toSignUp"
 							class="nav-link text-white"><i class="fas fa-user"></i>
 								Sign-Up</a></li>
@@ -45,125 +46,122 @@
 
 		</nav>
 	</header>
-	<div class="container">
-	<div class="row">
-	<div class="col-md-2"></div>
-	<div class="col-md-8">
-	
-	   <%
-      if (session != null) {
-         if (session.getAttribute("usuario") != null) {
-            String name = (String) session.getAttribute("usuario");
-            out.print("Hello, " + name + "  Welcome to ur Profile");
-         } else {
-            response.sendRedirect("login.jsp");
-         }
-      }
-   %>
-
-		
-		
-	<form action="Logout" method="post">
-      <button type="submit" class="btn btn-primary">logout</button>
-   </form>
-	
-	</div>
-	<div class="col-md-2"></div>
-	
-	</div>
-	
-	</div>
-	
-				<div class="foot">
-				<div class="row">
-					<div class="p-4 col-md-3 social">
-						<h2 class="mb-4">Social Media</h2>
-						<a href="https://www.facebook.com/" target="_blank"><i
-							class="fab fa-facebook-square"></i></a> <a
-							href="https://twitter.com/" target="_blank"><i
-							class="fab fa-twitter-square"></i></a> <a
-							href="https://www.instagram.com/" target="_blank"><i
-							class="fab fa-instagram"></i></a> <a
-							href="https://www.youtube.com/?hl=es&gl=ES" target="_blank"><i
-							class="fab fa-youtube"></i></a>
-					</div>
-					<div class="p-4 col-md-3 footli">
-						<h2 class="mb-4">Mapsite</h2>
-						<ul class="list-unstyled">
-							<li><a id="toIndex1"><i class="fas fa-home"></i>
-									Incio</a></li>
-							<br>
-							<li><a id="toAdopcion1"><i class="fas fa-dog"></i>
-									Adopcion</a></li>
-							<br>
-							<li><a id="toEventos1"><i class="far fa-calendar-alt"></i>
-									Eventos</a></li>
-							<br>
-							<li><a id="toSignUp1"><i class="fas fa-user"></i>
-									Sign-Up</a></li>
-						</ul>
-					</div>
-					<div class="p-4 col-md-3 cont">
-						<h2 class="mb-4">Contacto</h2>
-						<p>
-							<a href="tel:+34-678942577" class="text-white"> <i class="fa fa-phone"></i>
-								+34-678942577
-
-							</a>
-						</p>
-						<p>
-							<a href="mailto:adoptame.cs@gmail.com" class="text-white"> <i class="fa fa-envelope-o"></i>
-								adoptame.cs@gmail.com
-							</a>
-						</p>
-						<p>
-							<a id="toGoogleMaps" class="text-white"> <i class="fa fa-map "></i>
-								Av. Hermanos Bou, numero 79, 12003 Castellon de la Plana.
-
-							</a>
-						</p>
-					</div>
-					<div class="p-4 col-md-3">
-						<h2 class="mb-4">Login</h2>
-						<form>
-							<fieldset class="form-group">
-								<label for="login"></label> Suscribirse a nuestro
-								newsletter <input type="email" class="form-control"
-									placeholder="Enter email">
-							</fieldset>
-							<button type="submit" class="btn btn-success">Login</button>
-						</form>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 mt-3">
-						<p class="text-center">© Copyright 2019 AdoptaMe - All rights
-							reserved.</p>
-					</div>
-				</div>
+	<div class="container-fluid prefil" >
+		<div class="row" >
+			<div class="col-md-4">
+				<%
+					if (session != null) {
+						if (session.getAttribute("usuario") != null) {
+							String name = (String) session.getAttribute("usuario");
+				%>
+				<h4>
+					<%
+						out.print("Hola, " + name + " Bienvenido a tu perfil ");
+					%>
+				</h4>
+				<%
+					} else {
+							response.sendRedirect("login.jsp");
+						}
+					}
+				%>
 			</div>
-	
-		<script>
+			<div class="col-md-7"></div>
+			<div class="col-md-1">
+				<form action="Logout" method="post">
+					<button type="submit" class="btn btn-primary">logout</button>
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="foot">
+		<div class="row">
+			<div class="p-4 col-md-3 social">
+				<h2 class="mb-4">Social Media</h2>
+				<a href="https://www.facebook.com/" target="_blank"><i
+					class="fab fa-facebook-square"></i></a> <a href="https://twitter.com/"
+					target="_blank"><i class="fab fa-twitter-square"></i></a> <a
+					href="https://www.instagram.com/" target="_blank"><i
+					class="fab fa-instagram"></i></a> <a
+					href="https://www.youtube.com/?hl=es&gl=ES" target="_blank"><i
+					class="fab fa-youtube"></i></a>
+			</div>
+			<div class="p-4 col-md-3 footli">
+				<h2 class="mb-4">Mapsite</h2>
+				<ul class="list-unstyled">
+					<li><a id="toIndex1"><i class="fas fa-home"></i> Incio</a></li>
+					<br>
+					<li><a id="toAdopcion1"><i class="fas fa-dog"></i>
+							Adopcion</a></li>
+					<br>
+					<li><a id="toEventos1"><i class="far fa-calendar-alt"></i>
+							Eventos</a></li>
+					<br>
+					<li><a id="toSignUp1"><i class="fas fa-user"></i> Sign-Up</a></li>
+				</ul>
+			</div>
+			<div class="p-4 col-md-3 cont">
+				<h2 class="mb-4">Contacto</h2>
+				<p>
+					<a href="tel:+34-678942577" class="text-white"> <i
+						class="fa fa-phone"></i> +34-678942577
+
+					</a>
+				</p>
+				<p>
+					<a href="mailto:adoptame.cs@gmail.com" class="text-white"> <i
+						class="fa fa-envelope-o"></i> adoptame.cs@gmail.com
+					</a>
+				</p>
+				<p>
+					<a id="toGoogleMaps" class="text-white"> <i class="fa fa-map "></i>
+						Av. Hermanos Bou, numero 79, 12003 Castellon de la Plana.
+
+					</a>
+				</p>
+			</div>
+			<div class="p-4 col-md-3">
+				<h2 class="mb-4">Login</h2>
+				<form>
+					<fieldset class="form-group">
+						<label for="login"></label> Suscribirse a nuestro newsletter <input
+							type="email" class="form-control" placeholder="Enter email">
+					</fieldset>
+					<button type="submit" class="btn btn-success">Login</button>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 mt-3">
+				<p class="text-center">© Copyright 2019 AdoptaMe - All rights
+					reserved.</p>
+			</div>
+		</div>
+	</div>
+
+	<script>
 		document.getElementById("toIndex").addEventListener("click",
 				function() {
 					location.href = "MuestraIndexController?=";
 
 				});
-	
-	
+
 		document.getElementById("toAdopcion").addEventListener("click",
 				function() {
 					location.href = "MuestraAdopcionController?=";
 
 				});
-	
-	
+
 		document.getElementById("toEventos").addEventListener("click",
 				function() {
 					location.href = "MuestraEventosController?=";
 
 				});
-	
+
 		document.getElementById("toSignUp").addEventListener("click",
 				function() {
 					location.href = "MuestraSignUpController?=";
@@ -175,26 +173,25 @@
 					location.href = "MuestraIndexController?=";
 
 				});
-	
+
 		document.getElementById("toAdopcion1").addEventListener("click",
 				function() {
 					location.href = "MuestraAdopcionController?=";
 
 				});
-	
+
 		document.getElementById("toEventos1").addEventListener("click",
 				function() {
 					location.href = "MuestraEventosController?=";
 
 				});
-	
-	
+
 		document.getElementById("toSignUp1").addEventListener("click",
 				function() {
 					location.href = "MuestraSignUpController?=";
 
 				});
-	
+
 		document.getElementById("toGoogleMaps").addEventListener("click",
 				function() {
 					location.href = "MuestraGoogleMapsController?=";
@@ -207,6 +204,6 @@
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/22e0b86cee.js"></script>
-	
+
 </body>
 </html>

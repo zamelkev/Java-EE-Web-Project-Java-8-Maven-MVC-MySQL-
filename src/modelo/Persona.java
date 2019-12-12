@@ -31,6 +31,20 @@ public class Persona {
 		this.tipoTelefono = tipoTelefono;
 	}
 
+	
+
+	public Persona(int id, String nombre, String primerApellido, String segundoApellido, String direccion,
+			String correo) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.primerApellido = primerApellido;
+		this.segundoApellido = segundoApellido;
+		this.direccion = direccion;
+		this.correo = correo;
+	}
+
+
 
 	public Persona(int id, String nombre, String primerApellido, String segundoApellido, String direccion,
 			String correo, String usuario, String password) {

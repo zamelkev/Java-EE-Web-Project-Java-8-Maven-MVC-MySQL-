@@ -18,7 +18,7 @@ public class DatabaseConnection {
 		this.user = user;
 		this.password = password;
 	}
-
+    // Chris: para conecta el baso de datos 
 	public Connection getConn() throws ClassNotFoundException {
 		String urlConnection;
 		Properties infoConnection;
@@ -57,7 +57,7 @@ public class DatabaseConnection {
 
 		return rs;
 	}
-
+   // chris : para mostrar todo los mascota
 	public ResultSet dameMascotaMos() throws SQLException {
 		ResultSet rs = null;
 		String query = "Select m.id,  m.nombre, m.fechaNacimento, m.images, tm.descmascota\n"
@@ -77,7 +77,7 @@ public class DatabaseConnection {
 
 		return rs;
 	}
-
+	 // Chris : para guarda persona
 	public void insertaPersona(Persona p) throws SQLException {
 		String query1 = "INSERT INTO `gestiondeadoptar`.`persona` (`nombre`, `primerApellido`, "
 				+ "`segundoApellido`, `direccion`, `correo`, `usuario`, `password`) " + "VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -174,6 +174,25 @@ public class DatabaseConnection {
 			e.printStackTrace();
 		}
 		
+		return rs;
+	}
+	
+	public ResultSet damePersonaU(String usuario, String password) throws SQLException {
+		ResultSet rs = null;
+		String query = "select id, nombre, primerApellido, segundoApellido, direccion, correo\n" + 
+				"from persona where\n" + 
+				"usuario = ? and password = ? ";
+		PreparedStatement ps;
+		 try {
+			conn = getConn();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, usuario);
+			ps.setString(2, password);
+			rs = ps.executeQuery();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return rs;
 	}
 	

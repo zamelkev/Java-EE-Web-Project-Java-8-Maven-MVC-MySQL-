@@ -47,7 +47,7 @@ public class LoginCheck extends HttpServlet {
 		//doGet(request, response);
 		response.setContentType("text/html");
 		HttpSession session = request.getSession();
-		
+		//Chris: Ajax login 
 		//Gson gs = new Gson();
 		
 		//Persona persona = gs.fromJson(request.getParameter("usuario"), Persona.class);
@@ -67,7 +67,7 @@ public class LoginCheck extends HttpServlet {
 			// request.getRequestDispatcher("reserva.jsp").forward(request, response);
 			out.print("usuarioNoValido");
 		}*/
-		
+		// Chris : con session
 		String usuario  = request.getParameter("user");
 		String password = request.getParameter("password");
 		

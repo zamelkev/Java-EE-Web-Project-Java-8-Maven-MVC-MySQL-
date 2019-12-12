@@ -20,7 +20,7 @@ public class Modelo {
 	private Persona personaId;
 	private List<Persona>personas;
 	private List<TipoTelefono> tipoTelefonos;
-
+    private Persona personaUsuPwd;
 	private Persona personaUsuario;
 	private List<Evento> eventos;
 	private Adopcion adopcion;
@@ -35,7 +35,7 @@ public class Modelo {
 	}
 	
 	
-
+    // Chris: para mostrar todos los Mascota 
 	public List<Mascota> getMascotas() {
 		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
 		mascotas = new ArrayList<>();
@@ -64,8 +64,8 @@ public class Modelo {
 		return persona;
 	}
 
-
-
+   
+    // Chris : para guarda persona
 	public void setPersona(Persona persona) {
 		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
 		 try {
@@ -78,7 +78,7 @@ public class Modelo {
 	}
 
 
-
+//Chris: para mostrar una persona 
 	public Persona getPersonaId(int id) {
 		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
 		
@@ -98,12 +98,36 @@ public class Modelo {
 	}
 
 
-
+   
 	public void setPersonaId(Persona personaId) {
 		
 		this.personaId = personaId;
 	}
 
+    
+
+	public Persona getPersonaUsuPwd(String usuario, String password) {
+		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		
+		try {
+			ResultSet rs = db.damePersonaU(usuario, password);
+			while (rs.next()) {
+				personaUsuPwd = new Persona(rs.getInt("id"), 
+						rs.getString("nombre"), rs.getString("primerApellido"), rs.getString("segundoApellido"), 
+						rs.getString("direccion"), rs.getString("correo"));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return personaUsuPwd;
+	}
+
+
+	public void setPersonaUsuPwd(Persona personaUsuPwd) {
+		this.personaUsuPwd = personaUsuPwd;
+	}
 
 
 	public List<Persona> getPersonas() {
@@ -117,7 +141,7 @@ public class Modelo {
 	}
 
 
-
+	//Chris : para mostrar tipoTelefono
 	public List<TipoTelefono> getTipoTelefonos() {
 		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
 
@@ -143,7 +167,7 @@ public class Modelo {
 
 		this.tipoTelefonos = tipoTelefonos;
 	}
-
+    // Chris : para el login 
 	public Persona getPersonaUsuario(Persona pu) {
 		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
 		personaUsuario = null;

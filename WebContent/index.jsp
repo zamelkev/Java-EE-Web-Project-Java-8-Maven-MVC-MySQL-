@@ -79,9 +79,9 @@
 						electrónico a nuestra dirección adoptame.cs@gmail.com</p>
 						 
 						 <div class="row" id="btd">
-						 <div class="col-10"></div>
-						 <div class="col-2">
-						 <button type="submit" class="btn btn-success" id="btn1">Login</button>
+						 <div class="col-sm-10"></div>
+						 <div class="col-sm-2">
+						 <button type="submit" class="btn btn-warning" id="btn1">Login</button>
 						 
 						 </div>
 						 
@@ -90,7 +90,7 @@
 
 				</div>
 	            
-	            				<div class="contianer-fluid">
+	            				<div class="contianer-fluid con">
 					<div class="row">
 						<div id="carouselExampleIndicators"
 							class="carousel slide col-md-6" data-ride="carousel">
