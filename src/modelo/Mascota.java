@@ -8,6 +8,26 @@ public class Mascota {
 	private LocalDate fechaNacimento;
 	private String images;
 	private String descMascota;
+	private int idTipoMascota;
+	
+	
+	
+	public Mascota() {
+		super();
+	}
+	
+	public Mascota(int id, String nombre) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+	}
+
+	public Mascota(int id, String nombre, int idTipoMascota) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.idTipoMascota = idTipoMascota;
+	}
 	public Mascota(int id, String nombre, LocalDate fechaNacimento, String images, String descMascota) {
 		super();
 		this.id = id;
@@ -45,6 +65,12 @@ public class Mascota {
 	}
 	public void setDescMascota(String descMascota) {
 		this.descMascota = descMascota;
+	}
+	public int getIdTipoMascota() {
+		return idTipoMascota;
+	}
+	public void setIdTipoMascota(int idTipoMascota) {
+		this.idTipoMascota = idTipoMascota;
 	}
 	
 	

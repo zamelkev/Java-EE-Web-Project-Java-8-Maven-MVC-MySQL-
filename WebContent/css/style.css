@@ -271,9 +271,12 @@ color: #ffd700;
 }
 #btd{
     margin-bottom: 20px;
+    font-family: Zapf Chancery, cursive;
+	text-decoration: none;
+	
 }
 
-.contianer-fluid con{
+.con{
    
     margin-top: 20px;
 }

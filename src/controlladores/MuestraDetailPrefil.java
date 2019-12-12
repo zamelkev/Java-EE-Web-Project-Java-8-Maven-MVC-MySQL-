@@ -33,13 +33,19 @@ public class MuestraDetailPrefil extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		//String usuario  = request.getParameter("user");
+		//String password = request.getParameter("password");
 		int personaId = Integer.parseInt(request.getParameter("id"));
-		
 		Modelo m = new Modelo();
+		//Persona persona = m.getPersonaUsuPwd(usuario, password);
 		Persona persona = m.getPersonaId(personaId);
+		request.setAttribute("persona", persona);
+		//request.getRequestDispatcher("welcome.jsp").forward(request, response);
+		
 		String page = "/welcome.jsp";
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
 		requestDispatcher.forward(request, response);
+	
 	}
 
 	/**

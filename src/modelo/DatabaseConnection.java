@@ -57,6 +57,40 @@ public class DatabaseConnection {
 
 		return rs;
 	}
+	public ResultSet dameP() throws SQLException {
+		ResultSet rs= null;
+		String query = "select * from persona";
+		Statement st;
+		try {
+			conn = getConn();
+			st = conn.createStatement();
+			rs = st.executeQuery(query);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return rs;
+		
+	}
+	public ResultSet dameTipoMas() throws SQLException {
+		ResultSet rs = null;
+		String query = "select * from tipomascota";
+
+		Statement st;
+
+		try {
+			conn = getConn();
+			st = conn.createStatement();
+			rs = st.executeQuery(query);
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return rs;
+	}
    // chris : para mostrar todo los mascota
 	public ResultSet dameMascotaMos() throws SQLException {
 		ResultSet rs = null;
@@ -256,7 +290,22 @@ public class DatabaseConnection {
 		return rs;
 	}
 	
-	
+	public ResultSet dameMascotak() throws ClassNotFoundException {
+		ResultSet rs = null;
+		String query = "select id, nombre from mascota";
+		Statement ps;
+		
+		try {
+			conn = getConn();
+			ps = conn.createStatement();
+		
+			rs = ps.executeQuery(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
+	}
 	
 
 }

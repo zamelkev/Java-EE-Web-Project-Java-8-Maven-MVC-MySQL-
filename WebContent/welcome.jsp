@@ -77,7 +77,24 @@
 		</div>
 
 	</div>
+   <div class="container">
+   <div class="row">
+   <div class="col-md-1"></div>
+   <div class="col-md-10">
+ 
+  
+   <label>ID:</label><h3><c:out value="${persona.id}"></c:out></h3>
+   <label>Nombre:</label><h3><c:out value="${persona.nombre}"></c:out></h3>
+   <label>Primer Apellido:</label><h3><c:out value="${persona.primerApellido}"></c:out></h3>
+   <label>Segundo Apellido:</label><h3><c:out value="${persona.segundoApellido}"></c:out></h3>
+   <label>Dirrecion:</label><h3><c:out value="${persona.direccion}"></c:out></h3>
+   <label>correo:</label><h3><c:out value="${persona.correo}"></c:out></h3>
+   
+   </div>
+   <div class="col-md-1"></div>
+   </div>
 
+   </div>
 	<div class="foot">
 		<div class="row">
 			<div class="p-4 col-md-3 social">

@@ -24,7 +24,8 @@ public class Modelo {
 	private Persona personaUsuario;
 	private List<Evento> eventos;
 	private Adopcion adopcion;
-
+    private List<TipoMascota> tipoMascotas;
+    private List<Mascota> mascotass;
 	
 
 	/**
@@ -237,6 +238,51 @@ public class Modelo {
 	}
 	// KZ - Fin
 
-	
 
+	public List<TipoMascota> getTipoMascotas() {
+		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+
+		tipoMascotas = new ArrayList<>();
+		try {
+			ResultSet rs = db.dameTipoMas();
+			while(rs.next()) {
+				tipoMascotas.add(new TipoMascota(rs.getInt("id"), 
+						rs.getString("descMascota")));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tipoMascotas;
+	}
+
+
+	public void setTipoMascotas(List<TipoMascota> tipoMascotas) {
+		this.tipoMascotas = tipoMascotas;
+	}
+
+
+	public List<Mascota> getMascotass() throws SQLException {
+		DatabaseConnection db = new DatabaseConnection("christian", "Temp2019$$");
+		mascotas = new ArrayList<>();
+		try {
+			ResultSet rs = db.dameMascotak();
+			while(rs.next()) {
+				mascotass.add(new Mascota(rs.getInt("id"), 
+						rs.getString("nombre")));
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mascotass;
+	}
+
+
+	public void setMascotass(List<Mascota> mascotass) {
+		this.mascotass = mascotass;
+	}
+
+	
+   
 }
