@@ -96,7 +96,7 @@
 
 		</c:forEach>
 	</div>
-
+	<button id="adoptar" class="button button1">Adoptar</button>
 
 	<div class="foot">
 		<div class="row">
@@ -240,6 +240,13 @@
 		document.getElementById("toGoogleMaps").addEventListener("click",
 				function() {
 					location.href = "MuestraGoogleMapsController?=";
+
+				});
+	</script>
+	<script>
+		document.getElementById("adoptar").addEventListener("click",
+				function() {
+					location.href = "MuestraLogin?=";
 
 				});
 	</script>
